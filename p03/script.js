@@ -1,4 +1,4 @@
-const video = document.querySelector('#video');
+const video = document.getElementById('video');
 const play = document.getElementById('play');
 const stop = document.getElementById('stop');
 const progress = document.getElementById('progress');
@@ -30,23 +30,23 @@ function updateIcon() {
 // 3 - updateProgress - update the position of the progress bar and timestamp
 function updateProgress() {
     // Update slider
-    progress.value = video.currentTime/video.duration*100;
+    progress.value = (video.currentTime / video.duration) *100;
 
     // Update timestamp
     // Rounding down the minutes
-    let minutes = Math.floor(video.currentTime / 60);
-    if (minutes < 10) {
-        minutes = `0${minutes}`;
+    let mins = Math.floor(video.currentTime / 60);
+    if (mins < 10) {
+        mins = `0 `+ String(mins);
     }
 
     // Rounding down the seconds
-    let seconds = Math.floor(video.currentTime % 60);
-    if (seconds < 10) {
-        seconds = `0${seconds}`;
+    let secs = Math.floor(video.currentTime % 60);
+    if (secs < 10) {
+        secs = `0` + String(secs);
     }
     
     // Display Timestamp
-    timestamp.innerHTML = `${minutes}:${seconds}`;
+    timestamp.innerHTML = `${mins}:${secs}`;
 };
 
 // 4 - stopVideo - Stop video playback and reset time to 0

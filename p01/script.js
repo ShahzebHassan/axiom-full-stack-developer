@@ -3,7 +3,8 @@ const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
-document.form(reset);
+
+
 
 // All Functions
 // Function to show error
@@ -12,6 +13,7 @@ function showError(input,message) {
     formControl.className = 'form-control error';
     const small = formControl.querySelector('small');
     small.innerText = message;
+   
 }
 
 // Function to show success
@@ -65,6 +67,7 @@ function getFieldId(input) {
     return input.id.charAt(0).toUpperCase() + input.id.slice(1);
 }
 
+
 // This is an event listener for the form on submit
 form.addEventListener('submit',function(e) {
     e.preventDefault();
@@ -74,5 +77,12 @@ form.addEventListener('submit',function(e) {
     checkLength(password,6,30);
     checkEmail(email);
     checkPasswordsMatch(password,password2);
+    username.value="";
+    password.value="";
+    password2.value="";
+    email.value="";
+    
+
+    
 
 })
