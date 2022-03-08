@@ -122,7 +122,7 @@ input {
     display: block;
     font-size: 18px;
     padding: 10px;
-    width: 90%;
+    width: 100%;
 }
 
 
@@ -146,7 +146,15 @@ input {
     }
   }
 
-
+  @media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 602px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .container{
+        margin: 30px auto;
+        width: 250px;
+    }
+  }
 /* Media Queries: Tablet Landscape 
 @media screen and (max-width: 1060px) {
     #primary { width:67%; }
