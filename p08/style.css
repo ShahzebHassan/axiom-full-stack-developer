@@ -122,8 +122,9 @@ input {
     display: block;
     font-size: 18px;
     padding: 10px;
-    width: 100%;
+    width: 90%;
 }
+
 
 .btn {
     background-color: navy;
@@ -136,11 +137,16 @@ input {
     padding: 10px;
 }
 @media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 480px)
+  and (min-device-width: 375px) 
+  and (max-device-width: 602px)
   and (-webkit-min-device-pixel-ratio: 2) {
+    .container{
+        margin: 30px auto;
+        width: 300px;
+    }
+  }
 
-}
+
 /* Media Queries: Tablet Landscape 
 @media screen and (max-width: 1060px) {
     #primary { width:67%; }
