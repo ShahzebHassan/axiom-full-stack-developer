@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <link rel = "stylesheet" href = "style.css">
+    <title>Expense Tracker</title>
+</head>
+<body>
+    <h2>Expense Tracker</h2>
+    <div class="container">
+        <!--overall account balance-->
+        <h4>Account Balance</h4>
+        <h1 id = "balance">$0.00</h1>
+        <!--Credit and debit balnce-->
+        <div class="credit-debit-container">
+            <!--credit balance-->
+            <div>
+                <h4>Credit</h4>
+                <p id="money-credit" class="money credit">+$0.00</p>
+            </div>
+            <div>
+                <!--debit balance-->
+                <h4>Debit</h4>
+                <p id="money-debit" class="money debit">-$0.00</p>
+            </div>
+        </div>
+      <!--Transaction History-->
+      <h3>History</h3>
+      <ul id="list" class="list">
+          <!--<li class = "credit">Salary <span>+5,000</span><button class="delete-btn">X</button></li>
+          <li class = "debit">Dinner Party <span>-1,000</span><button class="delete-btn">X</button></li>-->
+      </ul>
+      <!--form to add a new transictions-->
+      <h3>Add Transaction</h3>
+      <form id="add-form">
+          <div class="form-control">
+              <label for="reason">Discription</label>
+             <input type="text" Inputscope="default" id="reason" placeholder="Enter reason for transaction"> 
+          </div>
+          <div class="form-control">
+            <label for="amount">Transaction Ammount</label>
+           <input type="number" Inputscope="default" id="amount" placeholder="Enter transaction Amount"> 
+        </div>
+        <button class="btn">Add Transaction</button>
+      </form>
+    </div>
+ 
+   
+   
+   
+    <script src="script.js"></script>
+</body>
+</html>

@@ -110,6 +110,16 @@ meals.addEventListener('click',e => {
         }
          
     });
+      //check if meal info exists
+      if(mealInfo) {
+        //get the data mealid attribute
+     const mealId = mealInfo.getAttribute('data-mealid');
+     console.log(mealId);   
+    //fetch details of meal
+    getMeal(mealId);
+    }
+   
+});
     //check for click on random button
     generate.addEventListener('click', () => {
         fetch('https://www.themealdb.com/api/json/v1/1/random.php')
@@ -121,13 +131,4 @@ meals.addEventListener('click',e => {
                 
             });
     });
-    //check if meal info exists
-    if(mealInfo) {
-        //get the data mealid attribute
-     const mealId = mealInfo.getAttribute('data-mealid');
-     console.log(mealId);   
-    //fetch details of meal
-    getMeal(mealId);
-    }
-   
-});
+  
