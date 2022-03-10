@@ -55,9 +55,9 @@ function updateBalance() {
                           .filter(amount => amount < 0)
                           .reduce((acc, amount) => (acc += amount) ,0)
                           //update values in the DOM
-    balance.innerText = `Rs${totalBalance}`;
-    moneyCredit.innerText = `Rs${creditBalance}`;
-    moneyDebit.innerText = `Rs${debitBalance}`;                     
+    balance.innerText = `Rs ${totalBalance}`;
+    moneyCredit.innerText = `Rs ${creditBalance}`;
+    moneyDebit.innerText = `Rs ${debitBalance}`;                     
 };
 //function to create a random ID
 function createID() {
