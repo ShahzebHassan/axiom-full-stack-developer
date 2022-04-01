@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+        
+     <div class="container">
+        <div class=" navbar">
+            <h3>Phone Book <i class="far fa-address-book"></i></h3>
+        </div>
+        
+     <div class="row">
+            
+        <div class="col-lg-4 inp">
+            
+            <input onkeyup="searchFunction()" id="myInput" class="form-control mt-2" placeholder="search">                            
+    
+                <!-- Trigger/Open The Modal -->
+            <button id="myBtn">Add New Contact</button>
+                <!-- The Modal -->
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+            <div class="modal-content">
+                 <span class="close">&times;</span>
+                    <div class="container2">
+                    <label id="head">Add contact</label>
+       
+                       <input onblur="validateName()" class="form-control mb-3 mt-3 " name="name" maxlength="10"  placeholder="Enter name" id="userName">
+                       <div id="nameAlert" class="alert alert-danger text-justify p-2 ">Please add name</div>
+                       <input onblur="validatePhone()" class="form-control mb-3 " name="email"  placeholder="Enter phone" id="userPhone">
+                       <div id="phoneAlert" class="alert alert-danger text-justify p-2 ">Please add a valid number</div>
+                       <input onblur="validateEmail()" class="form-control mb-3 "  name="phone"  placeholder="Enter E-mail" id="userEmail">
+                       <div id="mailAlert" class="alert alert-danger text-justify p-2 ">Please add a valid e-mail</div>
+       
+                       <button onclick="addapi()" class="btn btn-info w-100 btn1" id="btn" >Add</button>
+       
+            </div>
+       </div>
+    </div>
+ </div>
+            <br>
+           <div class="col-lg-8" >
+            
+            <table id="myTable" class="table">
+        
+            <thead class="tableh1">
+            <th class="">Name</th>
+            <th class="">Phone</th>
+            <th class="">E-mail</th>
+            <th class="">Delete</th>
+                
+            </thead>
+                <div >
+            <tbody id="tableBody" class="scrollit" >
+        </tbody>
+    </div>
+    </table>
+  </div>
+ </div>    
+</div>
+    
+ <script src="script.js"></script>
+</body>
+</html>
