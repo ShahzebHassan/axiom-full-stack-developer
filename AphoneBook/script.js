@@ -51,7 +51,7 @@ function displayData()
     var temp = "";
     for(var i=0 ; i<userContacts.length ; i++)
     {
-        temp += "<tr><td >"+userContacts[i].name+"</td><td>"+userContacts[i].phone+"</td><td>"+userContacts[i].email+"</td><td>"+'<a onclick="deleteContact(\''+userContacts[i].name+'\')" class="text-danger"><i class="fas fa-minus-circle"></i></a>'+"</td></tr>";
+        temp += "<tr><td >"+userContacts[i].name+"</td><td>"+userContacts[i].phone+"</td><td>"+userContacts[i].email+"</td><td>"+'<a onclick="deleteContact('+userContacts[i].name+')" class="text-danger"><i class="fas fa-minus-circle"></i></a>'+"</td></tr>";
     }
     document.getElementById("tableBody").innerHTML = temp;
     
@@ -84,7 +84,7 @@ function deleteContact(name)
     for(var i=0; i<userContacts.length; i++)
     {
         if(userContacts[i].name == name)
-        {
+        { console.log();
             userContacts.splice(i , 1);
         }
     }
@@ -213,8 +213,6 @@ async function getapi(url) {
 }
 // Calling that async function
 getapi(api_url);
-  
-// Function to hide the loader
 
 // Function to define innerHTML for HTML table
 function show(data) {
@@ -225,7 +223,8 @@ function show(data) {
     <td>${r.name} </td>
     <td>${r.phone}</td>
     <td>${r.email}</td> 
-    <td><a onclick="deleteapi(${r._id})" class="text-danger"><i class="fas fa-minus-circle"></i></a></td>          
+    <input type="hidden" id="deleteValuee" name="del" value="${r.name}">
+    <td><a onclick="deleteapi('${r._id}')" class="text-danger"><i class="fas fa-minus-circle"></i></a></td>          
 </tr>`;
     }
     // Setting innerHTML as tab variable
@@ -262,6 +261,7 @@ async function addapi(url) {
         res.json()).then(d => {   
             getapi();
            clearData();
+          getapi(api_url);
 
             // window.location.reload("http://127.0.0.1:5500/AphoneBook/index.html")
         })
@@ -277,12 +277,13 @@ async function addapi(url) {
  
 // Defining async function
 async function deleteapi(id) {
- console.log(id)
- fetch(`http://10.2.1.148:5000/delete/${id}`, {
+ var getv = document.getElementById("deleteValuee").value;
+ 
+ console.log(getv)
+ var del= fetch(`http://10.2.1.148:5000/delete/${id}`,{
   method: 'GET',
+  
 })
-   res.json().then(d => {   
-    getapi();
-        window.location.reload("http://127.0.0.1:5500/AphoneBook/index.html")
-    })
+getapi(api_url);
 }
+
